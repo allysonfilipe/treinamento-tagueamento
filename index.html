@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ambiente fictício para treinamento de tagueamento e Web Analytics.">
+  <title>UniPrática | Treinamento de Tagueamento</title>
+
+  <!--
+    TREINAMENTO GTM:
+    1) Substitua GTM-XXXXXXX pelo ID do seu container de TESTES.
+    2) Publique somente um container de testes, sem dados/IDs de clientes.
+    3) Este site é fictício e não pertence à UNAMA ou a qualquer instituição real.
+  -->
+
+  <!-- Google Tag Manager -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'training_page_context',
+      page_type: 'home',
+      site_name: 'unipratica_treinamento',
+      environment: 'test'
+    });
+  </script>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <style>
+    :root {
+      --navy: #10294b;
+      --blue: #1267d6;
+      --blue-dark: #084b9e;
+      --cyan: #27c2d1;
+      --ink: #182335;
+      --muted: #64748b;
+      --pale: #eef5fc;
+      --line: #dce5ef;
+      --white: #fff;
+      --green: #16865b;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); line-height: 1.55; background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    .topbar { background: var(--navy); color: #eaf3ff; padding: 8px 5%; font-size: 12px; display: flex; justify-content: space-between; gap: 16px; }
+    header { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+    .nav { max-width: 1180px; margin: auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 21px; letter-spacing: -.7px; color: var(--navy); }
+    .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 11px; color: #fff; background: linear-gradient(135deg, var(--blue), var(--cyan)); font-weight: 900; }
+    nav { display: flex; align-items: center; gap: 24px; font-size: 14px; font-weight: 650; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; border: 0; border-radius: 9px; background: var(--blue); color: #fff; padding: 12px 18px; font-weight: 750; cursor: pointer; transition: .2s; }
+    .btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn.secondary { background: #fff; color: var(--navy); border: 1px solid #cbd8e7; }
+    .hero { background: radial-gradient(circle at 82% 25%, #2e9edb 0, transparent 28%), linear-gradient(120deg, #10294b, #0b4f92); color: #fff; overflow: hidden; }
+    .hero-inner { max-width: 1180px; margin: auto; padding: 74px 24px 80px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 44px; align-items: center; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 1.8px; font-weight: 800; color: #75e3ec; font-size: 12px; }
+    h1 { font-size: clamp(38px, 5vw, 58px); line-height: 1.06; letter-spacing: -2px; margin: 14px 0 20px; }
+    .hero p { font-size: 18px; color: #e1efff; max-width: 570px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .hero .btn.secondary { border-color: #7ea5ca; background: transparent; color: white; }
+    .hero-card { background: rgba(255,255,255,.97); color: var(--ink); padding: 26px; border-radius: 20px; box-shadow: 0 25px 70px #051b3780; transform: rotate(1deg); }
+    .hero-card h2 { margin: 0 0 8px; font-size: 22px; color: var(--navy); }
+    .hero-card p { color: var(--muted); font-size: 14px; margin-top: 0; }
+    .search-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+    label { display: block; font-size: 12px; font-weight: 750; margin-bottom: 5px; color: #34445b; }
+    input, select { width: 100%; border: 1px solid #cbd5e1; border-radius: 8px; padding: 11px 12px; background: #fff; color: var(--ink); }
+    .search-grid .full { grid-column: 1 / -1; }
+    section { padding: 68px 24px; }
+    .container { max-width: 1180px; margin: auto; }
+    .section-head { max-width: 680px; margin-bottom: 30px; }
+    .section-head h2 { font-size: clamp(28px, 3vw, 38px); letter-spacing: -1px; line-height: 1.15; color: var(--navy); margin: 8px 0 12px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .eyebrow.dark { color: var(--blue); }
+    .course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .course { border: 1px solid var(--line); border-radius: 15px; overflow: hidden; background: white; transition: .2s; }
+    .course:hover { transform: translateY(-3px); box-shadow: 0 14px 35px #10294b12; }
+    .course-art { min-height: 125px; padding: 22px; display: flex; align-items: flex-end; background: linear-gradient(135deg, #d9f2ff, #b5d6ff); color: var(--navy); font-size: 29px; font-weight: 900; }
+    .course:nth-child(2) .course-art { background: linear-gradient(135deg, #e4e0ff, #c7c0ff); }
+    .course:nth-child(3) .course-art { background: linear-gradient(135deg, #d9f7e8, #a4e7cf); }
+    .course-body { padding: 20px; }
+    .course-body h3 { margin: 0 0 6px; color: var(--navy); }
+    .course-body p { color: var(--muted); font-size: 14px; min-height: 44px; }
+    .course-meta { color: #42536a; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+    .text-link { color: var(--blue); font-weight: 800; font-size: 14px; cursor: pointer; background: none; border: 0; padding: 0; }
+    .pale { background: var(--pale); }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .feature { background: white; border: 1px solid var(--line); border-radius: 15px; padding: 25px; }
+    .feature-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: #e4f2ff; color: var(--blue); font-size: 22px; margin-bottom: 16px; }
+    .feature h3 { color: var(--navy); margin: 0 0 8px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 14px; }
+    .cta { background: linear-gradient(110deg, #0f2d50, #1267b8); color: white; border-radius: 20px; padding: 36px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    .cta h2 { margin: 0 0 8px; font-size: 30px; }
+    .cta p { margin: 0; color: #d9eaff; }
+    .faq { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq summary { cursor: pointer; font-weight: 800; color: var(--navy); }
+    .faq p { color: var(--muted); margin-bottom: 0; }
+    .form-wrap { display: grid; grid-template-columns: .85fr 1.15fr; gap: 35px; align-items: start; }
+    .lead-form { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .field { margin-bottom: 14px; }
+    .form-status { margin-top: 12px; color: var(--green); font-weight: 700; font-size: 14px; }
+    footer { background: #0b1e35; color: #d6e3f3; padding: 32px 24px; font-size: 13px; }
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .training-note { background: #fff8dd; color: #624d00; border-top: 1px solid #f3dc80; border-bottom: 1px solid #f3dc80; padding: 12px 24px; text-align: center; font-size: 13px; }
+    @media (max-width: 800px) {
+      nav { display: none; }
+      .hero-inner, .form-wrap { grid-template-columns: 1fr; }
+      .hero-inner { padding-top: 50px; }
+      .hero-card { transform: none; }
+      .course-grid, .features { grid-template-columns: 1fr; }
+      .cta { align-items: flex-start; flex-direction: column; }
+      .topbar { justify-content: center; text-align: center; }
+      .topbar span:last-child { display: none; }
+    }
+    @media (max-width: 460px) {
+      .search-grid, .form-row { grid-template-columns: 1fr; }
+      .search-grid .full { grid-column: auto; }
+      section { padding: 48px 18px; }
+      .hero-inner { padding-left: 18px; padding-right: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="topbar">
+    <span>UNIPRÁTICA • AMBIENTE FICTÍCIO DE TREINAMENTO</span>
+    <span>Pratique. Implemente. Valide.</span>
+  </div>
+  <header>
+    <div class="nav">
+      <a class="brand" href="#inicio" aria-label="UniPrática página inicial">
+        <span class="brand-mark">UP</span><span>uniprática</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#cursos">Cursos</a>
+        <a href="#modalidades">Modalidades</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn" href="#contato" data-cta="header_inscricao">Quero me inscrever</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">Seu futuro começa com uma escolha</div>
+          <h1>Encontre o curso ideal para transformar sua carreira.</h1>
+          <p>Conheça possibilidades, explore áreas de conhecimento e dê o próximo passo na sua jornada acadêmica.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#cursos" data-cta="hero_ver_cursos">Explorar cursos</a>
+            <a class="btn secondary" href="#contato" data-cta="hero_falar_consultor">Falar com um consultor</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Encontre seu curso</h2>
+          <p>Use os filtros para explorar as opções fictícias da UniPrática.</p>
+          <form id="course-search" class="search-grid">
+            <div>
+              <label for="area">Área de interesse</label>
+              <select id="area" name="area">
+                <option value="">Todas as áreas</option>
+                <option value="saude">Saúde</option>
+                <option value="negocios">Negócios</option>
+                <option value="tecnologia">Tecnologia</option>
+              </select>
+            </div>
+            <div>
+              <label for="modalidade">Modalidade</label>
+              <select id="modalidade" name="modalidade">
+                <option value="">Todas</option>
+                <option value="presencial">Presencial</option>
+                <option value="ead">EAD</option>
+                <option value="semipresencial">Semipresencial</option>
+              </select>
+            </div>
+            <div class="full">
+              <label for="curso">Qual curso você procura?</label>
+              <input id="curso" name="curso" type="text" placeholder="Ex.: Administração">
+            </div>
+            <button class="btn full" type="submit" data-cta="buscar_curso">Buscar cursos</button>
+          </form>
+          <div id="search-status" class="form-status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cursos">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow dark">Descubra possibilidades</div>
+          <h2>Cursos para dar vida aos seus planos</h2>
+          <p>Cards fictícios para praticar cliques, variáveis, eventos e parâmetros no Google Tag Manager.</p>
+        </div>
+        <div class="course-grid">
+          <article class="course" data-course="analise_dados">
+            <div class="course-art">Dados & Tech</div>
+            <div class="course-body">
+              <h3>Análise de Dados</h3>
+              <p>Transforme informações em ideias, insights e decisões melhores.</p>
+              <div class="course-meta">Tecnologia • EAD • 2 anos</div>
+              <button class="text-link course-detail" data-course-name="Analise de Dados" data-course-category="tecnologia">Conhecer o curso →</button>
+            </div>
+          </article>
+          <article class="course" data-course="administracao">
+            <div class="course-art">Negócios</div>
+            <div class="course-body">
+              <h3>Administração</h3>
+              <p>Aprenda a organizar projetos, equipes e oportunidades de negócio.</p>
+              <div class="course-meta">Negócios • Presencial • 4 anos</div>
+              <button class="text-link course-detail" data-course-name="Administracao" data-course-category="negocios">Conhecer o curso →</button>
+            </div>
+          </article>
+          <article class="course" data-course="enfermagem">
+            <div class="course-art">Saúde</div>
+            <div class="course-body">
+              <h3>Enfermagem</h3>
+              <p>Desenvolva conhecimentos para cuidar de pessoas e comunidades.</p>
+              <div class="course-meta">Saúde • Semipresencial • 5 anos</div>
+              <button class="text-link course-detail" data-course-name="Enfermagem" data-course-category="saude">Conhecer o curso →</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pale" id="modalidades">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow dark">Escolha como aprender</div>
+          <h2>Uma modalidade que combina com sua rotina</h2>
+          <p>Os botões abaixo são oportunidades para testar eventos de interação e atributos de clique.</p>
+        </div>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">⌂</div>
+            <h3>Presencial</h3>
+            <p>Vivência no campus, atividades em grupo e contato com professores.</p>
+            <p style="margin-top:16px"><button class="text-link modality-click" data-modality="presencial">Ver cursos presenciais →</button></p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">◎</div>
+            <h3>Digital (EAD)</h3>
+            <p>Flexibilidade para estudar de onde estiver e organizar seus horários.</p>
+            <p style="margin-top:16px"><button class="text-link modality-click" data-modality="ead">Ver cursos EAD →</button></p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">◷</div>
+            <h3>Semipresencial</h3>
+            <p>Combine atividades digitais com encontros presenciais planejados.</p>
+            <p style="margin-top:16px"><button class="text-link modality-click" data-modality="semipresencial">Ver cursos semipresenciais →</button></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container form-wrap">
+        <div>
+          <div class="eyebrow dark">Vamos conversar?</div>
+          <h2 style="font-size:36px;line-height:1.15;color:var(--navy);letter-spacing:-1px">Dê o primeiro passo para sua próxima conquista.</h2>
+          <p style="color:var(--muted)">Preencha o formulário fictício para testar o envio de formulário, validação e evento de conversão.</p>
+          <p style="font-size:13px;color:var(--muted)">Atenção: use apenas informações de teste. Não colete dados pessoais reais neste ambiente.</p>
+        </div>
+        <form class="lead-form" id="lead-form">
+          <h3 style="margin-top:0;color:var(--navy)">Quero receber informações</h3>
+          <div class="form-row">
+            <div class="field">
+              <label for="nome">Nome fictício</label>
+              <input id="nome" name="nome" autocomplete="off" placeholder="Ex.: Pessoa Teste" required>
+            </div>
+            <div class="field">
+              <label for="email">E-mail de teste</label>
+              <input id="email" name="email" type="email" autocomplete="off" placeholder="teste@example.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="interesse">Curso de interesse</label>
+            <select id="interesse" name="interesse" required>
+              <option value="">Selecione</option>
+              <option value="analise_dados">Análise de Dados</option>
+              <option value="administracao">Administração</option>
+              <option value="enfermagem">Enfermagem</option>
+            </select>
+          </div>
+          <button type="submit" class="btn" style="width:100%" data-cta="enviar_lead">Enviar interesse</button>
+          <div id="lead-status" class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="duvidas" class="pale">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow dark">Perguntas frequentes</div>
+          <h2>Ficou com alguma dúvida?</h2>
+          <p>Use os itens expansíveis para praticar interações como abertura de FAQ.</p>
+        </div>
+        <details class="faq" data-faq="inscricao">
+          <summary>Como funciona a inscrição?</summary>
+          <p>Neste site fictício, basta preencher o formulário de demonstração. Nenhuma inscrição real será realizada.</p>
+        </details>
+        <details class="faq" data-faq="modalidades">
+          <summary>Quais modalidades estão disponíveis?</summary>
+          <p>Presencial, EAD e semipresencial. Os cursos e informações são apenas exemplos de treinamento.</p>
+        </details>
+        <details class="faq" data-faq="dados">
+          <summary>Meus dados serão armazenados?</summary>
+          <p>Não. O formulário demonstra uma interação no navegador e não envia os dados a um servidor.</p>
+        </details>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Pronto para começar?</h2>
+            <p>Explore os cursos e pratique suas implementações neste ambiente de demonstração.</p>
+          </div>
+          <a class="btn secondary" href="#cursos" data-cta="cta_explorar">Explorar cursos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><strong>UniPrática</strong><br>Site fictício para treinamento de Web Analytics.</div>
+      <div>Não representa uma instituição de ensino real.<br>© <span id="year"></span> • Ambiente de testes</div>
+    </div>
+  </footer>
+
+  <script>
+    // Eventos de exemplo para a estagiária usar no debug.
+    // Os eventos são enviados ao dataLayer; configure as tags no GTM de testes.
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function pushEvent(eventName, params) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: eventName }, params || {}));
+    }
+
+    document.querySelectorAll('[data-cta]').forEach(function (element) {
+      element.addEventListener('click', function () {
+        pushEvent('training_cta_click', {
+          cta_name: element.getAttribute('data-cta'),
+          cta_text: (element.innerText || '').trim(),
+          page_type: 'home'
+        });
+      });
+    });
+
+    document.getElementById('course-search').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var area = document.getElementById('area').value;
+      var modalidade = document.getElementById('modalidade').value;
+      var curso = document.getElementById('curso').value.trim();
+      pushEvent('training_course_search', {
+        course_area: area || 'all',
+        course_modality: modalidade || 'all',
+        search_term_entered: curso ? 'yes' : 'no'
+      });
+      document.getElementById('search-status').textContent = 'Busca demonstrativa realizada. Confira o evento no dataLayer.';
+    });
+
+    document.querySelectorAll('.course-detail').forEach(function (button) {
+      button.addEventListener('click', function () {
+        pushEvent('training_view_course', {
+          course_name: button.getAttribute('data-course-name'),
+          course_category: button.getAttribute('data-course-category')
+        });
+        document.getElementById('interesse').value =
+          button.getAttribute('data-course-name').toLowerCase().replaceAll(' ', '_') === 'analise_de_dados' ? 'analise_dados' :
+          button.getAttribute('data-course-name').toLowerCase();
+        document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    document.querySelectorAll('.modality-click').forEach(function (button) {
+      button.addEventListener('click', function () {
+        pushEvent('training_modality_click', {
+          course_modality: button.getAttribute('data-modality')
+        });
+      });
+    });
+
+    document.querySelectorAll('details.faq').forEach(function (item) {
+      item.addEventListener('toggle', function () {
+        if (item.open) {
+          pushEvent('training_faq_open', {
+            faq_name: item.getAttribute('data-faq')
+          });
+        }
+      });
+    });
+
+    document.getElementById('lead-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var course = document.getElementById('interesse').value;
+      // Não enviar nome/e-mail para o dataLayer: evite PII em analytics.
+      pushEvent('training_lead_submit', {
+        form_name: 'training_interest_form',
+        course_interest: course,
+        form_status: 'success'
+      });
+      document.getElementById('lead-status').textContent =
+        'Envio simulado! Nenhum dado foi transmitido. Confira training_lead_submit no dataLayer.';
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>
