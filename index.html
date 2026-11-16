@@ -28,7 +28,7 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M8VQ52NV');
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
   </script>
   <!-- End Google Tag Manager -->
 
@@ -126,11 +126,43 @@
       section { padding: 48px 18px; }
       .hero-inner { padding-left: 18px; padding-right: 18px; }
     }
+
+    .lab-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .lab-card { background:#fff; border:1px solid var(--line); border-radius:15px; padding:22px; }
+    .lab-card h3 { color:var(--navy); margin:0 0 8px; }
+    .lab-card p { color:var(--muted); font-size:14px; }
+    .lab-card .btn { margin-top:8px; }
+    .tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+    .tab-btn { border:1px solid var(--line); background:#fff; color:var(--navy); padding:10px 14px; border-radius:9px; cursor:pointer; font-weight:700; }
+    .tab-btn.active { background:var(--navy); color:#fff; }
+    .tab-panel { background:#fff; border:1px solid var(--line); border-radius:14px; padding:22px; }
+    .banner-demo { background:linear-gradient(110deg,#e0f2fe,#dbeafe); border-radius:14px; padding:26px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .banner-demo h3 { color:var(--navy); margin:0 0 6px; }
+    .banner-demo p { margin:0; color:#475569; }
+    .modal-backdrop { position:fixed; inset:0; background:#071629a8; display:none; align-items:center; justify-content:center; padding:18px; z-index:30; }
+    .modal-backdrop.open { display:flex; }
+    .modal-box { width:min(470px,100%); background:#fff; border-radius:18px; padding:25px; position:relative; box-shadow:0 25px 80px #0004; }
+    .modal-close { position:absolute; right:14px; top:10px; border:0; background:transparent; font-size:25px; cursor:pointer; color:#64748b; }
+    .field { margin-bottom:14px; }
+    .whatsapp-float { position:fixed; right:22px; bottom:22px; z-index:20; width:62px; height:62px; border:0; border-radius:50%; background:#20bd5a; color:#fff; font-size:28px; box-shadow:0 8px 25px #0b513a55; cursor:pointer; }
+    .whatsapp-float:hover { transform:translateY(-2px); }
+    .wa-window { position:fixed; right:22px; bottom:96px; z-index:21; width:min(360px,calc(100vw - 32px)); background:#fff; border-radius:16px; box-shadow:0 15px 50px #0b1e3533; overflow:hidden; display:none; }
+    .wa-window.open { display:block; }
+    .wa-head { background:#087e62; color:#fff; padding:16px; font-weight:800; display:flex; justify-content:space-between; }
+    .wa-body { padding:18px; }
+    .wa-message { background:#edf8f1; border-radius:10px; padding:10px 12px; font-size:13px; margin-bottom:14px; color:#26483b; }
+    .success-note { color:var(--green); font-weight:750; font-size:13px; margin-top:10px; }
+    .progress { height:7px; background:#e5edf5; border-radius:9px; overflow:hidden; margin:12px 0 20px; }
+    .progress span { display:block; height:100%; width:33.33%; background:var(--blue); transition:width .2s; }
+    .step { display:none; } .step.active { display:block; }
+    .debug-hint { background:#fff8dd; border:1px solid #f3dc80; color:#624d00; padding:14px 16px; border-radius:10px; font-size:13px; }
+    @media(max-width:800px) { .lab-grid {grid-template-columns:1fr;} .banner-demo {align-items:flex-start; flex-direction:column;} }
+
   </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8VQ52NV"
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
@@ -337,6 +369,65 @@
     </section>
   </main>
 
+
+    <section id="laboratorio" class="pale">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow dark">Prática de implementação</div>
+          <h2>Laboratório de interações</h2>
+          <p>Elementos adicionais para praticar cliques, formulários, estados, etapas, visibilidade e conversões.</p>
+        </div>
+        <div class="lab-grid">
+          <div class="lab-card"><div class="feature-icon">▣</div><h3>Pop-up de campanha</h3><p>Abra o modal, preencha o formulário fictício e valide abertura, fechamento e conversão.</p><button class="btn" id="open-promo" data-cta="lab_open_popup">Abrir pop-up</button></div>
+          <div class="lab-card"><div class="feature-icon">▤</div><h3>Simulador de mensalidade</h3><p>Altere curso, modalidade e turno para praticar captura de valores e resultado.</p><button class="btn" id="scroll-simulator" data-cta="lab_go_simulator">Testar simulador</button></div>
+          <div class="lab-card"><div class="feature-icon">☷</div><h3>Inscrição em etapas</h3><p>Avance e volte entre etapas. Teste início, progresso, validação e conclusão.</p><button class="btn" id="scroll-multistep" data-cta="lab_go_multistep">Testar formulário</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulador">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow dark">Interação dinâmica</div><h2>Simule sua mensalidade</h2><p>Selecione as opções e veja um valor demonstrativo ser atualizado.</p></div>
+        <div class="lead-form">
+          <div class="form-row">
+            <div class="field"><label for="sim-course">Curso</label><select id="sim-course"><option value="399">Análise de Dados</option><option value="459">Administração</option><option value="529">Enfermagem</option></select></div>
+            <div class="field"><label for="sim-mode">Modalidade</label><select id="sim-mode"><option value="1">EAD</option><option value="1.25">Semipresencial</option><option value="1.6">Presencial</option></select></div>
+          </div>
+          <div class="field"><label for="sim-shift">Turno</label><select id="sim-shift"><option value="matutino">Matutino</option><option value="noturno">Noturno</option><option value="flexivel">Flexível</option></select></div>
+          <div style="background:#eef5fc;border-radius:12px;padding:18px;margin:12px 0"><span style="color:#64748b;font-size:13px">Mensalidade estimada (fictícia)</span><div id="sim-result" style="font-size:32px;font-weight:900;color:#10294b">R$ 399,00</div></div>
+          <button class="btn" id="sim-calculate" data-cta="simulator_calculate">Calcular mensalidade</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pale" id="abas">
+      <div class="container"><div class="section-head"><div class="eyebrow dark">Navegação sem pageview</div><h2>Conheça a UniPrática</h2><p>Troque de aba para praticar eventos de navegação interna.</p></div>
+        <div class="tabs" role="tablist"><button class="tab-btn active" data-tab="estrutura">Estrutura</button><button class="tab-btn" data-tab="bolsas">Bolsas</button><button class="tab-btn" data-tab="carreiras">Carreiras</button></div>
+        <div class="tab-panel" id="tab-content">Conheça nossos espaços fictícios de aprendizagem e apoio ao estudante.</div>
+      </div>
+    </section>
+
+    <section id="banner-teste">
+      <div class="container"><div class="banner-demo" data-banner-id="campanha_novembro"><div><div class="eyebrow dark">Campanha demonstrativa</div><h3>Seu próximo capítulo começa aqui</h3><p>Explore as oportunidades da UniPrática.</p></div><button class="btn" id="banner-click" data-cta="banner_campaign_click">Saiba mais</button></div></div>
+    </section>
+
+    <section id="inscricao-etapas" class="pale">
+      <div class="container"><div class="section-head"><div class="eyebrow dark">Formulário multi-step</div><h2>Comece sua inscrição</h2><p>Formulário de demonstração. Nenhum dado será enviado ou armazenado.</p></div>
+        <form class="lead-form" id="multi-form">
+          <div class="progress"><span id="multi-progress"></span></div>
+          <div class="step active" data-step="1"><h3>Etapa 1 — Curso</h3><div class="field"><label for="multi-course">Curso de interesse</label><select id="multi-course" required><option value="">Selecione</option><option value="analise_dados">Análise de Dados</option><option value="administracao">Administração</option><option value="enfermagem">Enfermagem</option></select></div><button type="button" class="btn multi-next">Continuar</button></div>
+          <div class="step" data-step="2"><h3>Etapa 2 — Modalidade</h3><div class="field"><label for="multi-mode">Modalidade</label><select id="multi-mode" required><option value="">Selecione</option><option value="ead">EAD</option><option value="presencial">Presencial</option><option value="semipresencial">Semipresencial</option></select></div><button type="button" class="btn secondary multi-back">Voltar</button> <button type="button" class="btn multi-next">Continuar</button></div>
+          <div class="step" data-step="3"><h3>Etapa 3 — Confirmação</h3><p>Revise suas escolhas e conclua a inscrição fictícia.</p><button type="button" class="btn secondary multi-back">Voltar</button> <button type="submit" class="btn">Concluir inscrição</button></div>
+          <div id="multi-status" class="success-note" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <div class="modal-backdrop" id="promo-modal" role="dialog" aria-modal="true" aria-labelledby="promo-title"><div class="modal-box"><button class="modal-close" id="close-promo" aria-label="Fechar">×</button><div class="eyebrow dark">Condição especial fictícia</div><h2 id="promo-title" style="color:#10294b">Receba informações sobre os cursos</h2><p style="color:#64748b;font-size:14px">Preencha os campos de teste para simular uma conversão.</p><form id="promo-form"><div class="field"><label for="promo-name">Nome</label><input id="promo-name" required placeholder="Pessoa Teste"></div><div class="field"><label for="promo-email">E-mail</label><input id="promo-email" type="email" required placeholder="teste@example.com"></div><button class="btn" type="submit">Quero receber informações</button><div id="promo-status" class="success-note"></div></form></div></div>
+
+    <div class="wa-window" id="wa-window"><div class="wa-head"><span>Atendimento UniPrática</span><button id="wa-close" style="border:0;background:transparent;color:white;font-size:20px;cursor:pointer">×</button></div><div class="wa-body"><div class="wa-message">Olá! 👋 Para iniciar uma conversa com nosso time, preencha seus dados.</div><form id="wa-form"><div class="field"><label for="wa-name">Nome</label><input id="wa-name" required placeholder="Seu nome"></div><div class="field"><label for="wa-email">E-mail</label><input id="wa-email" type="email" required placeholder="voce@example.com"></div><div class="field"><label for="wa-phone">Telefone</label><input id="wa-phone" type="tel" required placeholder="(00) 00000-0000"></div><button class="btn" style="width:100%;background:#087e62" type="submit">Iniciar atendimento</button><div id="wa-status" class="success-note"></div></form></div></div>
+    <button class="whatsapp-float" id="wa-open" aria-label="Abrir atendimento WhatsApp" title="Fale conosco">✆</button>
+
   <footer>
     <div class="footer-inner">
       <div><strong>UniPrática</strong><br>Site fictício para treinamento de Web Analytics.</div>
@@ -421,6 +512,37 @@
         'Envio simulado! Nenhum dado foi transmitido. Confira training_lead_submit no dataLayer.';
       event.target.reset();
     });
+
+
+    // Laboratório adicional: os eventos são fictícios e não enviam PII ao dataLayer.
+    function trainingPush(name, params) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(Object.assign({event:name}, params || {})); }
+    var promoModal = document.getElementById('promo-modal');
+    document.getElementById('open-promo').addEventListener('click', function(){ promoModal.classList.add('open'); trainingPush('training_popup_open',{popup_name:'course_offer'}); });
+    document.getElementById('close-promo').addEventListener('click', function(){ promoModal.classList.remove('open'); trainingPush('training_popup_close',{popup_name:'course_offer',close_method:'button'}); });
+    promoModal.addEventListener('click', function(e){ if(e.target===promoModal){ promoModal.classList.remove('open'); trainingPush('training_popup_close',{popup_name:'course_offer',close_method:'backdrop'}); }});
+    document.getElementById('promo-form').addEventListener('submit',function(e){e.preventDefault();trainingPush('training_popup_submit',{form_name:'promo_lead',form_status:'success'});document.getElementById('promo-status').textContent='Conversão simulada! Nenhum dado foi enviado.';});
+
+    var waWindow=document.getElementById('wa-window');
+    document.getElementById('wa-open').addEventListener('click',function(){waWindow.classList.toggle('open');trainingPush(waWindow.classList.contains('open')?'training_whatsapp_open':'training_whatsapp_close',{widget_name:'rd_style_whatsapp'});});
+    document.getElementById('wa-close').addEventListener('click',function(){waWindow.classList.remove('open');trainingPush('training_whatsapp_close',{widget_name:'rd_style_whatsapp',close_method:'button'});});
+    document.getElementById('wa-form').addEventListener('submit',function(e){e.preventDefault();trainingPush('training_whatsapp_submit',{form_name:'whatsapp_lead',form_status:'success'});document.getElementById('wa-status').textContent='Atendimento simulado iniciado! Nenhum dado foi transmitido.';});
+
+    function updateSimulator(){var base=Number(document.getElementById('sim-course').value);var factor=Number(document.getElementById('sim-mode').value);var value=base*factor;document.getElementById('sim-result').textContent=value.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});return value;}
+    ['sim-course','sim-mode','sim-shift'].forEach(function(id){document.getElementById(id).addEventListener('change',function(){trainingPush('training_simulator_change',{field_name:id,field_value:this.value});});});
+    document.getElementById('sim-calculate').addEventListener('click',function(){var amount=updateSimulator();trainingPush('training_simulator_result',{course_value:document.getElementById('sim-course').value,modality:document.getElementById('sim-mode').selectedOptions[0].text,shift:document.getElementById('sim-shift').value,simulated_price:amount});});
+    document.getElementById('scroll-simulator').addEventListener('click',function(){document.getElementById('simulador').scrollIntoView({behavior:'smooth'});});
+    document.getElementById('scroll-multistep').addEventListener('click',function(){document.getElementById('inscricao-etapas').scrollIntoView({behavior:'smooth'});});
+
+    var tabCopy={estrutura:'Conheça nossos espaços fictícios de aprendizagem e apoio ao estudante.',bolsas:'Consulte condições demonstrativas de bolsas e descontos para praticar interações.',carreiras:'Explore possibilidades fictícias de carreira e desenvolvimento profissional.'};
+    document.querySelectorAll('[data-tab]').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('[data-tab]').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');document.getElementById('tab-content').textContent=tabCopy[btn.dataset.tab];trainingPush('training_tab_select',{tab_name:btn.dataset.tab});});});
+    document.getElementById('banner-click').addEventListener('click',function(){trainingPush('training_banner_click',{banner_id:'campanha_novembro',banner_position:'content'});});
+
+    var currentStep=1; var steps=Array.from(document.querySelectorAll('#multi-form .step'));
+    function showStep(n){currentStep=n;steps.forEach(function(step){step.classList.toggle('active',Number(step.dataset.step)===n);});document.getElementById('multi-progress').style.width=(n/3*100)+'%';}
+    document.querySelectorAll('.multi-next').forEach(function(btn){btn.addEventListener('click',function(){var select=steps[currentStep-1].querySelector('select');if(!select.checkValidity()){select.reportValidity();return;}trainingPush('training_form_step',{form_name:'multi_step_enrollment',step_number:currentStep,step_action:'next'});showStep(Math.min(3,currentStep+1));});});
+    document.querySelectorAll('.multi-back').forEach(function(btn){btn.addEventListener('click',function(){trainingPush('training_form_step',{form_name:'multi_step_enrollment',step_number:currentStep,step_action:'back'});showStep(Math.max(1,currentStep-1));});});
+    document.getElementById('multi-form').addEventListener('submit',function(e){e.preventDefault();trainingPush('training_multistep_submit',{form_name:'multi_step_enrollment',course:document.getElementById('multi-course').value,modality:document.getElementById('multi-mode').value,form_status:'success'});document.getElementById('multi-status').textContent='Inscrição de demonstração concluída!';showStep(1);e.target.reset();});
+
   </script>
 </body>
 </html>
